@@ -7,10 +7,21 @@ namespace primary_app.Controllers
     [ApiController]
     public class DemoController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<string> Get()
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IConfiguration _configuration;
+
+        public DemoController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
-            var response = "Hello Gooner!";
+            _httpClientFactory = httpClientFactory;
+            _configuration = configuration;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<string>> Get()
+        {
+            var url = _configuration["SIDECAR_URL"];
+            var httpClient = _httpClientFactory.CreateClient();
+            var response = await httpClient.GetStringAsync(url);
             return Ok(response);
         }
     }
