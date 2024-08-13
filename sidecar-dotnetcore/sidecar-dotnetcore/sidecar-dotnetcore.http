@@ -1,6 +1,6 @@
-@sidecar_dotnetcore_HostAddress = http://localhost:5111
+@sidecar_dotnetcore_HostAddress = http://localhost:2000
 
-GET {{sidecar_dotnetcore_HostAddress}}/weatherforecast/
+GET {{sidecar_dotnetcore_HostAddress}}/api/Demo/
 Accept: application/json
 
 ###

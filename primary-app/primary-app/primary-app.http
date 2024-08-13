@@ -1,6 +1,6 @@
-@primary_app_HostAddress = http://localhost:5056
+@primary_app_HostAddress = https://localhost:7058
 
-GET {{primary_app_HostAddress}}/weatherforecast/
+GET {{primary_app_HostAddress}}/api/Demo/
 Accept: application/json
 
 ###

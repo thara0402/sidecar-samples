@@ -19,9 +19,10 @@ namespace primary_app.Controllers
         [HttpGet]
         public async Task<ActionResult<string>> Get()
         {
-            var url = _configuration["SIDECAR_URL"];
+            var sidecarUrl = _configuration["SIDECAR_URL"];
+
             var httpClient = _httpClientFactory.CreateClient();
-            var response = await httpClient.GetStringAsync(url);
+            var response = await httpClient.GetStringAsync(sidecarUrl);
             return Ok(response);
         }
     }
