@@ -1,0 +1,8 @@
+@primary_app_HostAddress = https://localhost:7058
+
+POST {{primary_app_HostAddress}}/api/generate/ HTTP/1.1
+content-type: application/json
+
+"What is Azure App Service?"
+
+###

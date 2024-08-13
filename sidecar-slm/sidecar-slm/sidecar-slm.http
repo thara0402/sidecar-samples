@@ -1,0 +1,32 @@
+@sidecar_slm_HostAddress = http://localhost:11434
+
+POST {{sidecar_slm_HostAddress}}/api/generate/ HTTP/1.1
+content-type: application/json
+
+{
+    "model": "phi3",
+    "prompt": "What is Azure App Service?",
+    "stream": false,
+    "options": {
+        "num_keep": 5,
+        "num_predict": 150,
+        "seed": 42,
+        "top_k": 1,
+        "top_p": 0.9,
+        "tfs_z": 0.5,
+        "typical_p": 0.7,
+        "repeat_last_n": 33,
+        "temperature": 0.8,
+        "repeat_penalty": 1.2,
+        "presence_penalty": 1.5,
+        "frequency_penalty": 1.0,
+        "mirostat": 1,
+        "mirostat_tau": 0.8,
+        "mirostat_eta": 0.6,
+        "penalize_newline": true,
+        "stop": ["<*end*>"],
+        "num_thread": 8
+    }
+}
+
+###
